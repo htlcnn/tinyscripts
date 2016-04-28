@@ -8,9 +8,7 @@ def gen_passwd(length=16):
     result.append(random.choice(string.digits))
     result.append(random.choice(string.punctuation))
     for i in range(length-len(result)):
-        result.append(random.choice(
-            string.ascii_letters +
-            string.digits + string.punctuation))
+        result.append(random.choice(string.printable))
     random.shuffle(result)
     return ''.join(result)
 
